@@ -4,13 +4,13 @@ pipeline{
         stage("Code"){
             steps{
                 echo "Code cloned"
-                git url:'https://github.com/amar-m-cloud/Django-Notes-Application.git',
+                git url:'https://https://github.com/shaiksulthanhussainvali/Project-3-Django-Application.git',
                 branch:'main'
             }
         }
         stage("Build"){
             steps{
-                sh "docker build . -t django-notes-application"
+                sh "docker build . -t django-application"
             }
         }
         stage("Pushing to Docker Hub"){
