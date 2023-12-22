@@ -1,11 +1,9 @@
 pipeline{
     agent any
     stages{
-        stage("Code"){
-            steps{
-                echo "Code cloned"
-                git url:'https://https://github.com/shaiksulthanhussainvali/Project-3-Django-Application.git',
-                branch:'main'
+        stage('code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/shaiksulthanhussainvali/Project-3-Django-Application.git'
             }
         }
         stage("Build"){
@@ -15,10 +13,10 @@ pipeline{
         }
         stage("Pushing to Docker Hub"){
             steps{
-                withCredentials([usernamePassword(credentialsId:"Docker-Hub-Credentials",passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]){
-                sh "docker tag django-notes-application ${env.DOCKER_USERNAME}/django-notes-application:latest"
-                sh "docker login -u ${env.DOCKER_USERNAME} -p ${env.DOCKER_PASSWORD}"
-                sh "docker push ${env.DOCKER_USERNAME}/django-notes-application:latest"
+                withCredentials([usernamePassword(credentialsId:"Docker-Hub-Credentials",passwordVariable: 'S.Hussain@123', usernameVariable: 'dockerhussain')]){
+                sh "docker tag django-application ${env.dockerhussain}/django-application:latest"
+                sh "docker login -u ${env.dockerhussain} -p ${env."S.Hussain@123"}"
+                sh "docker push ${env.dockerhussain}/django-application:latest"
                 }
             }
         }
