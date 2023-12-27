@@ -2,12 +2,9 @@ version: '3.8'
 
 services:
   backend:
-    build:
+    build: 
       context: .
       dockerfile: Dockerfile
     ports:
       - "9088:8000"
-    volumes:
-      - .:/app
-    command: /app/backend/manage.py manage.py runserver 0.0.0.0:8000
-
+    restart: always
