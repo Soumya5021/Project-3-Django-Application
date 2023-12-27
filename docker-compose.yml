@@ -9,5 +9,5 @@ services:
       - "9088:8000"
     volumes:
       - .:/app
-    command: /venv/bin/python manage.py runserver 0.0.0.0:8000
+    command: /app/backend/manage.py manage.py runserver 0.0.0.0:8000
 
