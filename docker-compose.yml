@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "9089:8000"
+      - "9088:8000"
     volumes:
       - .:/app
     command: /venv/bin/python manage.py runserver 0.0.0.0:8000
