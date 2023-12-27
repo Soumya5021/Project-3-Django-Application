@@ -16,7 +16,7 @@ RUN pip install --upgrade pip \
 COPY . /app/backend
 
 # Expose the necessary port
-EXPOSE 9089
+EXPOSE 9088
 
 # Command to run your Django server
 CMD ["python", "/app/backend/manage.py", "runserver", "0.0.0.0:8000"]
